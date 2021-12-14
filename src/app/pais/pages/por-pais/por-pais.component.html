@@ -1,0 +1,18 @@
+<h1>Búsqueda por país:</h1>
+<hr>
+<div class="row">
+    <!-- Este div se mostrará si no se ha cargado todavía el país -->
+    <div class="alert alert-info" *ngIf="termino!='' && tieneerror==false && paises!=null">
+        Espere por favor...
+    </div>
+    <div class="alert alert-danger" *ngIf="tieneerror">
+        No se encontró nada con el término {{termino}}
+    </div>
+    <app-input-pais (onEnter)="buscar($event)"></app-input-pais>
+</div>
+<hr>
+<div class="row">
+
+    <app-pais-tabla [countries]="paises"></app-pais-tabla>
+
+</div>
