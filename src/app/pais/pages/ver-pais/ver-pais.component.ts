@@ -11,7 +11,7 @@ import { PaisServiceService } from '../../services/pais-service.service';
 export class VerPaisComponent implements OnInit {
 
   constructor(private activatedroute:ActivatedRoute,private paisservice:PaisServiceService) { }
-  pais:any=null;
+  pais!:Country;
   ngOnInit(): void {
     console.log(this.activatedroute.snapshot.params);
     this.paisservice.verPais(this.activatedroute.snapshot.params['id']).subscribe(resp=>{
